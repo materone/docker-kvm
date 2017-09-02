@@ -31,7 +31,7 @@ ENV VNC_PORT 5500
 ENV VNC_SOCK /data/vnc.sock
 ENV TCP_PORTS ""
 ENV UDP_PORTS ""
-ENV DISPLAY ""
+ENV DISPLAY "curses"
 
 VOLUME /data
 
