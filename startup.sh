@@ -193,6 +193,12 @@ if [ -n "$KEYBOARD" ]; then
   echo "parameter: ${FLAGS_KEYBOARD}"
 fi
 
+if [ -n "$DISPLAY" ]; then
+  echo "[display]"
+  FLAGS_DISPLAY="-display ${DISPLAY}"
+  echo "parameter: ${FLAGS_DISPLAY}"
+fi
+
 set -x
 exec /usr/bin/kvm ${FLAGS_REMOTE_ACCESS} \
   -k en-us -m ${RAM} -smp ${SMP} -cpu ${FLAGS_CPU} -usb -usbdevice tablet -no-shutdown \
@@ -203,4 +209,5 @@ exec /usr/bin/kvm ${FLAGS_REMOTE_ACCESS} \
   ${FLAGS_ISO2} \
   ${FLAGS_NETWORK} \
   ${FLAGS_KEYBOARD} \
-  ${FLAGS_BOOT}
+  ${FLAGS_BOOT} \ 
+  ${FLAGS_DISPLAY}
